@@ -1,8 +1,14 @@
 <form [formGroup]="LabseqFormGroup" (ngSubmit)="onSubmit()">
   <label for="index">Enter the index you want to calculate:</label>
-  <input type="number" id="index" formControlName="labseqIndex" class="ml-10">
-  <button type="submit">Enviar</button>
+  <input type="number" id="index" formControlName="labseqIndex" class="ml-2 bg-white rounded text-black">
+  <button type="submit" class="bg-green-800 rounded ml-2 p-1 ">Submit</button>
 </form>
-
-<div>Calculated value: {{ calculatedValue }}</div>
+<div [style.display]="errorMessage==undefined?'none':'block'" class="text-red-600 mt-2">
+  {{ errorMessage }}
+</div>
+<div [style.display]="calculatedValue == undefined?'none':'block'">
+  <p>Result: {{ calculatedValue }}</p>
+  <p>Execution time in nanoseconds: {{ executionTime }} nanoseconds</p>
+  <p>Execution time in seconds: {{executionTime/1000000000}} seconds</p>
+</div>
 
