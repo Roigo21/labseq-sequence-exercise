@@ -1,1 +1,8 @@
-<p>labseqfield works!</p>
+<form [formGroup]="LabseqFormGroup" (ngSubmit)="onSubmit()">
+  <label for="index">Enter the index you want to calculate:</label>
+  <input type="number" id="index" formControlName="labseqIndex" class="ml-10">
+  <button type="submit">Enviar</button>
+</form>
+
+<div>Calculated value: {{ calculatedValue }}</div>
+
