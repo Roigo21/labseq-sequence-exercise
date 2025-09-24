@@ -1,12 +1,12 @@
-# Altice Labs Labseq Exercise
+# 🚀 Altice Labs Labseq Exercise
 
-This project has been developed using **Java with the Quarkus Framework** for the backend and **Angular** for the frontend.  
+This project has been developed using **Java with the Quarkus Framework** for the backend and **Angular** for the frontend.
 
-Both modules (backend and frontend) are containerized using **Docker**, making it easy to build and run the application.  
+Both modules (backend and frontend) are containerized using **Docker 🐳**, making it easy to build and run the application.
 
 ---
 
-## Project Structure
+## 🗂 Project Structure
 
 ```text
 .
@@ -24,13 +24,12 @@ Both modules (backend and frontend) are containerized using **Docker**, making i
 └── README.md
 ```
 
-- **backend/** → Contains the REST API built with Quarkus.  
-- **frontend/** → Contains the Angular client application.  
-- **docker-compose.yml** → Orchestrates the two services (backend + frontend).  
-
+- **backend/**→ Contains the REST API built with Quarkus ⚡
+- **frontend/** → Contains the Angular client application 🌐
+- **docker-compose.yml** → Orchestrates the two services (backend + frontend) 🛠
 ---
 
-## Running the application
+## ▶️ Running the application
 
 1. Make sure you have **Docker** and **Docker Compose** installed.  
 2. From the root directory of the project, run:  
@@ -46,7 +45,7 @@ docker compose up --build
 
 ---
 
-## API Documentation (Swagger)
+## 📄 API Documentation (Swagger)
 
 The backend provides interactive API documentation via **Swagger UI**, available at:  
 
