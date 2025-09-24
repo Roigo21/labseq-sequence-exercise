@@ -3,11 +3,12 @@ services:
   backend:
     build:
       context: ./backend
-      dockerfile: src/main/docker/Dockerfile.jvm
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
+    working_dir: /code
+    entrypoint: [ "mvn", "clean", "quarkus:dev" ]
     restart: always 
-
   frontend:
     build:
       context: ./frontend
