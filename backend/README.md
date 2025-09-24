@@ -1,66 +1,55 @@
-# alticelabs-labseq-exercise
+# Altice Labs Labseq Exercise
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This project has been developed using **Java with the Quarkus Framework** for the backend and **Angular** for the frontend.  
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+Both modules (backend and frontend) are containerized using **Docker**, making it easy to build and run the application.  
 
-## Running the application in dev mode
+---
 
-You can run your application in dev mode that enables live coding using:
+## Project Structure
 
-```shell script
-./mvnw quarkus:dev
+```text
+.
+├── backend/        # Quarkus backend module (Java)
+│   ├── src/        # Application source code
+│   ├── pom.xml     # Maven configuration
+│   └── ...         
+│
+├── frontend/       # Angular frontend module
+│   ├── src/        # Application source code
+│   ├── package.json
+│   └── ...
+│
+├── docker-compose.yml
+└── README.md
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+- **backend/** → Contains the REST API built with Quarkus.  
+- **frontend/** → Contains the Angular client application.  
+- **docker-compose.yml** → Orchestrates the two services (backend + frontend).  
 
-## Packaging and running the application
+---
 
-The application can be packaged using:
+## Running the application
 
-```shell script
-./mvnw package
+1. Make sure you have **Docker** and **Docker Compose** installed.  
+2. From the root directory of the project, run:  
+
+```bash
+docker compose up --build
 ```
 
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+3. This will build and start both the backend and frontend containers.  
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+- The **backend** will be accessible at: [http://localhost:8080](http://localhost:8080)  
+- The **frontend** will be accessible at: [http://localhost:4200](http://localhost:4200)  
 
-If you want to build an _über-jar_, execute the following command:
+---
 
-```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
-```
+## API Documentation (Swagger)
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+The backend provides interactive API documentation via **Swagger UI**, available at:  
 
-## Creating a native executable
+👉 [http://localhost:8080/q/swagger-ui](http://localhost:8080/q/swagger-ui)  
 
-You can create a native executable using:
-
-```shell script
-./mvnw package -Dnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
-
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/alticelabs-labseq-exercise-1.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
-
-## Related Guides
-
-- REST ([guide](https://quarkus.io/guides/rest)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
-
-## Provided Code
-
-### REST
-
-Easily start your REST Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+This interface allows you to explore and test all available REST endpoints.  
