@@ -24,7 +24,7 @@ Both modules (backend and frontend) are containerized using **Docker 🐳**, mak
 └── README.md
 ```
 
-- **backend/**→ Contains the REST API built with Quarkus ⚡
+- **backend/** → Contains the REST API built with Quarkus ⚡
 - **frontend/** → Contains the Angular client application 🌐
 - **docker-compose.yml** → Orchestrates the two services (backend + frontend) 🛠
 ---
